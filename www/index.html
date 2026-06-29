@@ -5,6 +5,25 @@
     <!-- 【修改点】: 增加了 viewport-fit=cover 来启用边缘到边缘的显示模式 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>AI聊天助手 - 支持上下文调节与群聊</title>
+    <!-- iOS PWA全屏必备配置 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AI聊天助手">
+
+<!-- PWA清单文件 -->
+<link rel="manifest" href="/manifest.webmanifest">
+<!-- iOS桌面图标 -->
+<link rel="apple-touch-icon" href="/icon.png">
+
+<!-- ServiceWorker注册（iOS16.4+必须） -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+  })
+}
+</script>
     <link rel="stylesheet" href="style.css">
     <script src="capacitor.js"></script>
     <script src="crypto-js.min.js"></script>
